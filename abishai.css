@@ -1,0 +1,15 @@
+label {
+  color: lime;
+}
+button {
+  color: red;
+}
+#city:disabled {
+  background-color: goldenrod;
+}
+h2 {
+  color: chartreuse;
+}
+p {
+  color: blue;
+}

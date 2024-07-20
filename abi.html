@@ -8,8 +8,8 @@
   </head>
   <body>
     <div>
-      <label for="city">City:</label>
-      <input type="text" id="city" />
+      <label for="city">Enter City name:</label>
+      <input type="text" id="Enter City name" />
       <button onclick="getWeather()">Get Weather Info</button>
     </div>
     <div id="result">
@@ -17,8 +17,8 @@
     </div>
     <script>
       async function getWeather() {
-        const cityName = document.getElementById("city").value;
-        const apiKey = "d3723d2bfebd59e10b75788232ee5f75"; // Replace with your OpenWeatherMap API key
+        const cityName = document.getElementById("Enter City name").value;
+        const apiKey = "d3723d2bfebd59e10b75788232ee5f75";
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
         try {
@@ -27,12 +27,12 @@
 
           if (data.cod === 200) {
             const weatherInfo = `
-                        <h2>Weather in ${data.name}</h2>
-                        <p>Temperature: ${data.main.temp}°C</p>
-                        <p>Weather: ${data.weather[0].description}</p>
-                        <p>Humidity: ${data.main.humidity}%</p>
-                        <p>Wind Speed: ${data.wind.speed} m/s</p>
-                    `;
+                              <h2>Weather in ${data.name}</h2>
+                              <p>Temperature: ${data.main.temp}°C</p>
+                              <p>Weather: ${data.weather[0].description}</p>
+                              <p>Humidity: ${data.main.humidity}%</p>
+                              <p>Wind Speed: ${data.wind.speed} m/s</p>
+                          `;
             document.getElementById("result").innerHTML = weatherInfo;
           } else {
             document.getElementById("result").innerHTML = "City not found.";
